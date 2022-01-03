@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- put stylesheet, etc. links here! -->
+    <!-- also any jquery script links! -->
+    
+    <title>NewSite!</title>
+    
+    <style>
+        #navbarSide {
+            display: none;
+        }
+    
+    </style>
+    
+    <script>
+        var menuOpen = false;
+        $(document).ready(() => {
+            $("#hamburger").mouseenter(slideMenu);
+            $("#navbarSide").mouseleave(slideMenu);
+            $("#navbarSide").slideUp();
+        });
+        
+        function slideMenu() {
+            if (!menuOpen) {
+                $("#hamburger").attr("src", "./images/openmenu.png");
+                $("#navbarSide").slideDown();
+            }
+            else {
+                $("#navbarSide").slideUp();
+                $("#hamburger").attr("src", "./images/menu.png");
+            }
+            menuOpen = !menuOpen;            
+        };   
+    </script>
+
+    
+</head>
+
+
+<body>
+    <header>
+        <div class="logoBar">
+            <div class="box">
+                <a href="home.html"><img src="https://www.freeiconspng.com/uploads/home-icon-png-home-icon-31.png"></a>
+            </div>
+            <div class="box">
+                <h1 style="text-shadow: .26vw .1vw .15vw #ebf9f2">
+                    Autistically ASD
+                </h1>
+            </div>
+        </div>
+        <div id="hamburgerNavTop">
+            <div class="box">
+                <img id="hamburger" style="height: 2em" src="./images/menu.png">
+            </div>
+            <div class="box">
+                <a href="home.html"><h3>Home</h3></a>
+            </div>
+            <div class="box">
+                <a href="adulthood.html"><h3>Adulthood</h3></a>
+            </div>
+            <div class="box">
+                <a href="healthcare.html"><h3>Healthcare</h3></a>
+            </div>
+            <div class="box">
+                <a href="comorbidities.html"><h3>Comorbidities</h3></a>
+            </div>
+            <div class="box">
+                <a href="LGBTQ.html"><h3>LGBTQIA+</h3></a>
+            </div>
+            <div class="box">
+                <a href="advocacy.html"><h3>Advocacy</h3></a>
+            </div>
+            <div class="box">
+                <a href="resources.html"><h3>Resources</h3></a>
+            </div>
+            <div class="box">
+                <a href="quiz.html"><h3>Quiz</h3></a>
+            </div>
+            <div class="box">
+                <a href="FAQs.html"><h3>FAQs</h3></a>
+            </div>
+            <div class="box">
+                <a href="about.html"><h3>About</h3></a>
+            </div>
+            <div class="box">
+                <a href="contact.html"><h3>Contact</h3></a>
+            </div>
+            <div class="box">
+                <a href="patreon.html"><h3>Patreon</h3></a>
+            </div>
+        </div>
+        
+        <div id="navbarSide">
+            <a href="home.html">Home</a>
+            <br>
+            <br>
+            <a href="adulthood.html">Adulthood</a>
+            <br>
+            <br>
+            <a href="healthcare.html">Healthcare</a>
+            <br>
+            <br>
+            <a href="comorbidities.html">Comorbidities</a>
+            <br>
+            <br>
+            <a href="LGBTQ.html">LGBTQIA+</a>
+            <br>
+            <br>
+            <a href="advocacy.html">Advocacy</a>
+            <br>
+            <br>
+            <a href="resources.html">Resources</a>
+            <br>
+            <br>
+            <a href="quiz.html">Quiz</a>
+            <br>
+            <br>
+            <a href="FAQs.html">FAQs</a>
+            <br>
+            <br>
+            <a href="about.html">About</a>
+            <br>
+            <br>
+            <a href="contact.html">Contact</a>
+            <br>
+            <br>
+            <a href="patreon.html">Patreon</a>
+            <br>
+            <button id="closeMenu"></button>          
+        </div>        
+        
+    </header>
+    
+    <br><br><br><br><br><br><br><br><br>
+    
+    <button id="translateButton">
+        <img id="arrow" style="height: 1.2em; float: right; margin-right: 1.5em; margin-left: -1.7em" src="https://image.flaticon.com/icons/png/512/60/60995.png">
+        Translate
+    </button>   
+    
+    <h1 id="heading" style="font-size: 2.2em; text-align: center; font-family: arial, sans-serif">
+        AutisticallyASD: Quiz
+    </h1>
+    <br>
+    
+    <p id="reminder">Note to self: to provide multiple quizzes, have different buttons 
+        on the page to present each available quiz, so that when the user 
+        clicks one of the buttons then the page displays that specific quiz 
+        (following the beginning of a quiz, all of the quiz option buttons 
+        will disappear so that the current quiz content can occupy the page)...
+        with multiple quizzes, utilizing a database would be the most practical
+        solution, albeit more difficult to set up</p>
+    
+    
+    
+    <div id="outputResults">
+        <div id="quizResults"></div>  
+    </div>
+    
+    <div class="quizButtons">
+        <button id="quiz1">for medical providers</button>
+        <br><br><br>
+        <button id="quiz2">for mental health providers</button>
+        <br><br><br>
+        <button id="quiz3">for educators</button>
+    </div>
+    
+    <div class="quizElements">
+        <div id="quiz"></div>           
+        <!--<div id="error">Please select a choice.</div>-->   
+        <button id="Qbutton">begin quiz</button>
+    </div>
+        
+    
+    <script>
+        var iterator = 0;
+        var quizQuestions;
+        $('#Qbutton').hide();   
+        //$('#error').hide(); 
+
+        $(document).ready(() => {
+            $("#quiz1").click(function() {
+                quizQuestions = quizMedical;  
+                createQuiz();           
+            });        
+            $("#quiz2").click(function() {
+                quizQuestions = quizMentalHealth; 
+                createQuiz();
+            });
+            $("#quiz3").click(function() {
+                quizQuestions = quizEducators;
+                createQuiz();
+            });                    
+        });
+        
+
+    
+        function createQuiz() {
+            
+            $('#reminder').hide();
+            
+            $('#quiz1').hide(); 
+            $('#quiz2').hide(); 
+            $('#quiz3').hide(); 
+            
+            
+            var output = [];
+            
+            quizQuestions.forEach((curr, questionNum) => {
+                var options = [];
+                
+                for (choice in curr.options) {
+                    options.push(
+                    `<input type="radio" id="Qchoice${questionNum}${choice}" name="question${questionNum}" value="${choice}" onchange="getNext()">
+                    <label for="Qchoice${questionNum}${choice}">${curr.options[choice]}
+                    <br/>
+                    </label>`
+                    );
+                }
+                
+                output.push(
+                    `<div class="fullQ" id="${questionNum}">
+                    <div class="question"> ${curr.question} </div>
+                    <br/><br/>
+                    <div class="choices"> ${options.join('')} </div>
+                    </div>
+                    <br/><br/><br/>`
+                );                                    
+            });            
+            
+            quizText.innerHTML = output.join('');  
+            
+            $('.fullQ').css('display', 'none');
+            
+            $('#Qbutton').show();   
+            $('#Qbutton').css('top', '-10em');                   
+            $("#Qbutton").click(getNext);           
+        }
+        
+        
+        
+        function getNext() {    
+            $('#Qbutton').hide(); 
+            $('#heading').css('display', 'none');
+            $('#quiz').css('margin-bottom', '10em');
+            //$('#error').css('top', '3em');
+            //$('#Qbutton').css('top', '3em');
+            
+            //window.scrollTo(0, 0);
+                    
+            if (iterator > 0) {
+                // validate input (user has selected an option)
+                var answerResults = quizText.querySelectorAll(".choices");
+                var answerChosen = answerResults[iterator - 1];
+                var selection = `input[name=question${iterator - 1}]:checked`;
+                var userAnswer = (answerChosen.querySelector(selection) || {}).value;
+                
+                /*if (userAnswer != "a" && userAnswer != "b" && userAnswer != "c") {            
+                    $('#error').show();
+                }*/
+                //else { // if no validation error, load next question
+                    //$('#error').hide();
+                    
+                    if (button.innerHTML == "Submit Quiz") {
+                        $('.fullQ').css('display', 'none');
+                        //$('#Qbutton').hide();
+                        processResults();
+                    }
+                    else {
+                        // only show the current question
+                        
+                        $(`#${iterator - 1}`).fadeOut(1000);
+                        $(`#${iterator}`).css('top', '11em');
+                        $(`#${iterator}`).fadeIn(2000);
+                        
+                        /*setTimeout(function() {                            
+                            
+                        }, 1000);*/
+                        
+                        
+                        //$('.fullQ').css('display', 'none');   
+                        //$(`#${iterator}`).show();
+                        
+                        
+                        if (iterator == 5) {
+                            button.innerHTML = "Submit Quiz";
+                        }
+                        else {
+                            button.innerHTML = "Next Question";
+                        }
+                    }   
+                    
+                    iterator++;                    
+                //}    
+            }
+            else { // we're on the first question
+                $('.fullQ').css('display', 'none');     
+                $('#0').show();
+                $('#0').css('top', '11em');
+                //button.innerHTML = "Next Question";                      
+                
+                iterator++;
+            }  
+            
+            window.scrollTo(0, 0);  
+        }
+        
+        
+        
+        function processResults() {            
+            // get answers from quiz
+            var answerResults = quizText.querySelectorAll(".choices");
+            
+            var userSelection = [];
+            var totalScore = 0;
+            var improvements = [];
+
+
+            quizQuestions.forEach((curr, questionNum) => {                
+
+                // find selected answer
+                var answerChosen = answerResults[questionNum];
+                var selection = `input[name = question${questionNum}]:checked`;
+                var userAnswer = (answerChosen.querySelector(selection) || {}).value;
+                
+                //var dogAnswer = curr.outcome[userAnswer];
+                var answerPoint = curr.outcome[userAnswer];
+                totalScore += answerPoint;
+                
+                if (answerPoint < 2) {
+                    improvements.push(questionNum);
+                }
+            });
+            
+            var finalOutput = "Based on your quiz results, you scored a total of "
+            + totalScore + " points!";
+            
+            if (!improvements.length < 1) {
+                finalOutput += " You could improve on question(s)";
+                
+                improvements.forEach((currQ) => {
+                    finalOutput += " " + currQ;
+                });
+                finalOutput += ".";
+            }            
+
+            resultsText.innerHTML = finalOutput;        
+        }
+        
+        
+        
+        const quizMedical = [
+            {
+                question: "What does your office space look like?",
+                options: 
+                    {
+                        a: "It's a typical medical office: strong lights, a consistent soap smell, passing noise, fairly busy.",
+                        b: "I try to seek out spaces that are less stimulating when I know my patient is autistic, but such environments can be difficult to access.",
+                        c: "The only rooms with bright lights are those that really need clarity of vision. I purposefully make an effort to choose a space that is far from noise, and I offer sunglasses, earplugs, fidget toys, etc. to any patient I come across, regardless of whether I know them to have a disability.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "How do you interact with autistic patients, particularly those who are beyond an elementary school age range?",
+                options: 
+                    {
+                        a: "Regardless of their age, I speak mainly to their parent(s)/guardian(s). If the patient is nonspeaking, I cannot directly communicate with them at all.",
+                        b: "I make an effort to speak with the autistic individual, but I often require the input of the parent(s)/guardian(s) to get the full picture. I might attempt to communicate with a patient who uses AAC, but it can be difficult.",
+                        c: "I prioritize the individual and trust in their ability to advocate for, and comprehend, themselves. I welcome all forms of communication, and I treat my autistic patients with professional respect and integrity. I am always open to parent/guardian input, but only if the patient gives permission for their parent(s)/guardian(s) to be involved.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "If your practice uses forms/paperwork, what does that look like?",
+                options: 
+                    {
+                        a: "All paperwork is geared toward the parent(s)/guardian(s). The language on the forms can sometimes be outdated, but I don't have much control over it.",
+                        b: "All paperwork uses clear and concise wording, yet the information is often geared towards an adult-aged audience, and can be complex to process. Most forms are inclusive when it comes to components such as gender and sexuality, though I cannot always guarantee it.",
+                        c: "All paperwork uses unambiguous language. Information is presented with all of the necessary details, and there exist alternative resources, such as diagrams, that are offered alongside the originals. Each form provides fully inclusive language, so that patients can feel comfortable representing their intersectional indentities.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "When communicating with a patient, to what extent are you mindful of potential processing differences?",
+                options: 
+                    {
+                        a: "Time is valuable, so I often need to explain concepts and conduct conversations at the same speed I would for any other patient.",
+                        b: "I make an effort to ask if they have any questions, and I'm always open to taking a break. I wish I could do more, but I only have so much time on my hands.",
+                        c: "I anticipate the transition by allowing my patients to preview the office space in advance, or I'll otherwise give them a few minutes at the beginning to settle in. I encourage my patients to explain concepts back to me so as to confirm their understanding, and I offer ample time for any decision making.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "If you have had neurodiversity training, what did that look like?",
+                options: 
+                    {
+                        a: "I have never had neurodiversity training, or otherwise the training I had was lacking in substance.",
+                        b: "I receive routine or occasional neurodiversity training, but the concepts/language often appear outdated. I have many questions, and I don't always feel prepared to work with neurodiverse patients in person.",
+                        c: "The training I receive is thorough and routine. The materials are created by and, if applicable, presented by, neurodiverse self-advocates. Inclusive and intersectional language is very consistent.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "To what extent are you familiar with and mindful of intersectionality?",
+                options: 
+                    {
+                        a: "I have been trained and am informed in several areas, but I'm unsure of which conditions or identities might be more common in an autistic population.",
+                        b: "I am aware of the influence of certain socioeconomic positions, and I work to be mindful of the significance of race, ethnicity, language, gender, etc. in affecting the individual experience. But I could benefit from paying greater attention to these intersections, or I'd otherwise like to learn about additional identities.",
+                        c: "In addition to being mindful of racial, ethnic, and sociological factors, I also comprehend the increased likelihood of LGBTQIA+ identities, physical conditions / chronic illness, and comorbid neurological / mental health experiences, among others. My practice has been intentionally built upon an intersectional foundation.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }            
+            }
+        ];
+        
+        
+        const quizMentalHealth = [
+            {
+                question: "How do you make space for neurodiverse sensory needs in your practice?",
+                options: 
+                    {
+                        a: "My focus is often directed toward the content of a discussion, so I don't pay much attention to sensory needs.",
+                        b: "I am very mindful of the information my clients communicate to me, so if they mention sensory processing differences, then I pay careful attention and offer them my full support. However, I don't usually consider a client's sensory diet unless it is explicitly important to them.",
+                        c: "Regardless of diagnoses, upon meeting a new client, I make a point to communicate to them that sensory tools, such as fidget toys and bodily stims, are welcome. If I know a client to have specific sensory needs, then I will incorporate that into my practice and, if applicable, the therapeutic environment itself.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "Do you adjust the approach of your practice to better suit neurodiverse needs and communication styles?",
+                options: 
+                    {
+                        a: "I put forth my best effort to meet my client wherever they may be, but it can be difficult to work with clients who are not always receptive to emotions, or who otherwise struggle to convey their thoughts.",
+                        b: "I recognize that emotions can pose a challenge for autistic people, so I am careful to respect their comfort. I encourage my clients to communicate on their own terms, whether that be through speech, drawing, an AAC device, etc. But I'm not sure I would feel prepared to address the needs of a diverse autistic population.",
+                        c: "In addition to accepting and encouraging the unique emotional expression and communication of my clients, I also can appreciate the non-traditional speed of, and approach to, the therapeutic process. My practice prioritizes warmth, positive regard, flexibility, and creativity.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "To what extent do you feel equipped to address intersectionality in your practice?",
+                options: 
+                    {
+                        a: "I have training in a number of areas, so I feel confident in my ability to understand many perspectives. But I'm not very familiar/comfortable with certain comorbid conditions.",
+                        b: "My training and past experience have equipped me with a broad understanding of various identities, and I am willing to research any comorbid conditions a client mentions. But I imagine I might have a hard time connecting with a client whose needs are more extensive.",
+                        c: "I have worked with many neurodiverse individuals in the past, and I am well-versed in the various comorbidites that I am likely to encounter in working with autistic clients. I am eager to research any conditions or identities that could help me better understand my client.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "To what extent do you believe in your clients' knowledge of themselves?",
+                options: 
+                    {
+                        a: "Of course I am very respectful of my clients and their self-perception. But I sometimes question my autistic clients' ability to really grasp what it is they feel or need, especially if they are younger or have more limited speech.",
+                        b: "I trust my clients' ability to advocate for themselves, and I am almost always receptive to their decisions. I only challenge their judgment when I believe them to be thinking inaccurately, or otherwise when, if applicable, their parent(s)/guardian(s) possess opinions that grossly contradict theirs.",
+                        c: "I recognize my clients' capacity for autonomy and self-determination, and I am completely confident in their ability to comprehend what it is they feel, need, perceive, etc. I might ask for further information if something seems very unusual, but my practice ultimately focuses on cultivating the empowerment of each client.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "What are your thoughts on procedures relating to forced hospitalization?",
+                options: 
+                    {
+                        a: "Forced hospitalization is never ideal, but it is absolutely necessary in certain circumstances. It's a difficult decision to make, but I'd rather not run the risk.",
+                        b: "I recognize that corruption is innate in most systems of this kind, and that forced hospitalization typically inflicts even more harm. But sometimes I don't have an alternative.",
+                        c: "I am familiar with the immense damage and trauma that forced hospitalization is likely to inflict upon clients. I therefore place very heavy priority on identifying alternative interventions, and I will only turn to forced hospitalization as an absolute last resort, only in the most extreme/unavoidable cases.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "Where do your opinions lie on ABA and similar behavior modification therapies?",
+                options: 
+                    {
+                        a: "ABA is said to be evidence-based, and I trust the professionals. That is to say, I trust that physicians and researchers understand what is best for an autistic population.",
+                        b: "I am aware of the terrible origins of, and motivations behind, ABA, but I'm not sure there is much else to do in the more extreme cases.",
+                        c: "In addition to comprehending the extensively corrupt history of ABA, I also recognize that the autistic community has thoroughly denounced ABA for its abusive practices and its legacy of trauma. I trust self-advocates, thus I am wholeheartedly opposed to any and all kinds of therapy that employ behavior modification.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }            
+            }
+        ];
+        
+        
+        const quizEducators = [
+            {
+                question: "What steps do you take to make your educational materials accessible?",
+                options: 
+                    {
+                        a: "My curriculum is beyond my control, or otherwise I lack the time to expand upon it. If students have accessibility needs, then that is something they should discuss with our disability department.",
+                        b: "The majority of my materials exist in one singular format. I try to incorporate other educational tools, such as videos and diagrams, but I don't typically alter my materials unless I am instructed to do so by our disability department. Accommodations are usually made on an individual basis.",
+                        c: "Regardless of whether I know students to have disability accommodations, I strive to incorporate a variety of different tools into my educational materials. I regularly seek feedback from my students, and I keep myself up to date on the obstacles disabled students face so as to ensure that my educational environment is consistent in its adherence to general accessibility.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "How do you account for sensory needs within your educational environment?",
+                options: 
+                    {
+                        a: "If a student explicitly seeks out the assistance of our disability department, then I can make changes that are conducive to their learning, so long as such changes are within reason.",
+                        b: "When I am aware of a student's neurodivergent diagnosis, I communicate with our disability department to see which changes would be ideal. I am proactive about reducing lighting, avoiding excessive noise, and allowing preferential seating, but only when the space I am in permits me to make such adjustments.",
+                        c: "My educational space is free from visual clutter and unnecessary noise, and I avoid utilizing fluorescent lighting. At the beginning of each term, I allow students to fill out a confidential questionnaire that provides the opportunity to elaborate on sensory needs. I respect and trust my students, and I routinely seek feedback from students as well as colleagues.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "To what extent are you mindful of communication differences?",
+                options: 
+                    {
+                        a: "My students need to be prepared for the real world. This means that they need to become accustomed to speaking with others in a way that is clear, engaging, and professional. It is not my job to coddle them.",
+                        b: "I am always willing to pursue alternative means of communication when applicable. Although I am open to whatever works best for the student, I admittedly feel most comfortable with verbal speech and email.",
+                        c: "I am familiar with AAC, and I am always willing to do further research as needed. I recognize all forms of communication as valuable, and I never put pressure on students to articulate their thoughts in one specific way.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "How do you make space for students to express their understanding of a topic?",
+                options: 
+                    {
+                        a: "I consistently employ the classics: exams and papers. I don't have the time to construct multiple different testing materials, and students need to adjust to the expectations of traditional education.",
+                        b: "Every now and then I try to mix up my testing materials by allowing for presentations, dioramas, or some other unique artistic display. But exams and papers are still a strict necessity, and more often that not, there just isn't room to budge.",
+                        c: "I recognize that traditional forms of testing may not accurately reflect a neurodivergent student's understanding. I therefore try my hardest to provide options for students, so that they may evaluate their strengths and display their knowledge in a way that is engaging to them.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "Do you have a procedure in place to help students during times of distress?",
+                options: 
+                    {
+                        a: "Class time is valuable, so if a student is genuinely in crisis, then they will need to handle their situation with a nurse or with a counselor. It is then their responsibility to catch up, as I myself am unable to invest time in bringing them back up to speed.",
+                        b: "If a student or disability office communicates a specific need, then together we can identify a plan for when the student is struggling. But I'm not sure I would feel prepared to address a more intense situation, such as a meltdown or shutdown.",
+                        c: "I am familiar with both meltdowns and shutdowns, and I understand the steps that I can take to assist if ever these events occur. I am also proactive about communicating with the student about their triggers, and we have a plan in place for removing them from the environment when needed.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }
+            },
+            {
+                question: "To what extent are you mindful of the language that you utilize around students?",
+                options: 
+                    {
+                        a: "Of course I would never intentionally say something that causes harm, but I'm not always aware of the appropriate thing to say when describing a community of people or a situation.",
+                        b: "I am aware of the stigma that surrounds mental health and neurological conditions, so I put forth an effort to use language that is neutral and inoffensive. Admittedly, however, there are areas in which I don't feel knowledgeable, or otherwise topics that are beyond my comfort zone.",
+                        c: "In addition to keeping myself up to date on inclusive practices that are outlined by self-advocates, I also make an effort to correct any colleagues or students who perpetuate stigma or utilize incorrect/offensive language, and I am very quick implement and appreciate changes when others notify me of my mistakes.",
+                    },
+                outcome:
+                    {
+                        a: 0,
+                        b: 1,
+                        c: 2,
+                    }            
+            }
+        ];
+            
+            
+        
+        var quizText = document.getElementById("quiz");
+        var resultsText = document.getElementById("quizResults");
+        var button = document.getElementById("Qbutton");        
+        
+        
+    </script>
+    
+    
+</body>
+
+
+
+
+<footer>
+</footer>
+
+
+
+
+
+
