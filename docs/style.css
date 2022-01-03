@@ -1,0 +1,464 @@
+/*elements found on each page*/
+#navbarSide {
+    width: 10em;
+    height: 105vw;
+    background-color: #ffd1cc;
+    opacity: .97;
+    z-index: 9999;
+    padding-top: 1em;
+    padding-left: 1.2em;
+    margin-left: -.1em;
+    border: .15em solid #000;
+    border-top: 0em;
+    border-left: 0em;
+}
+
+#navbarSide a {
+    font-size: 1.5em;
+}
+
+#closeMenu {
+    font-size: 3em;
+    background-color: transparent;
+    border-color: transparent;
+    /*margin-left: 140px;*/
+}
+
+#closeMenu:hover {
+    color: #fff;
+}
+
+#hamburger:hover {
+    cursor: pointer;
+}
+
+#hamburgerNavTop {
+    background-color: #ffd1cc;
+    width: 100%;
+    font-size: 1.2em;
+    z-index: 999;
+    height: 3.2em;
+    position: relative;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    overflow: hidden;
+    border: .1em solid #000;
+    border-left: 0em;
+    margin-left: -.1em;
+    padding-top: .2em;
+}
+
+header {
+    width: 100vw;
+    /*margin: 0px;*/
+    margin-top: -1em;
+    margin-left: -.4em;
+    position: fixed;
+    z-index: 99999;
+}
+
+.logoBar {
+    background-color: #ffa399;
+    width: 100%;
+    margin: 0px;
+    margin-top: -1.2em;
+    margin-left: -.1em;
+    padding-bottom: 2em;
+    height: 3.4em;
+    z-index: 9999;
+    position: relative;
+    align-items: center;
+}
+
+.logoBar h1 {
+    color: #000;
+    font-size: 3em;
+    margin-top: -1.4em;
+    text-align: center;
+    font-family: arial, sans-serif;
+    letter-spacing: .1em;
+}
+
+.box {
+    flex: 0 1 auto;
+    margin: .5em;
+    margin-top: .5em;
+    vertical-align: top;
+}
+.box h3 {
+    margin: .2em;
+}
+
+a img {
+    height: 3.5em;
+    margin-left: 0em;
+    margin-top: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 0;
+}
+
+a:hover {
+    color: #ebf9f2;
+}
+
+.box a:hover {
+    color: #ebf9f2;
+}
+
+#navbarSide a:hover {
+    color: #ebf9f2;
+}
+
+#translateButton {
+    padding: .8em .1em;
+    display: block;
+    position: fixed;
+    border: .15em solid #000;
+    border-radius: .2em;
+    background-color: #ff7566;
+    color: #000;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 10em;    
+    z-index: 99999;
+    top: .15em;
+    right: .15em;
+}
+
+#translateButton:hover {
+    background-color: #ff5e4d;
+    cursor: pointer;
+    color: #ebf9f2;
+    text-shadow: .16vw .1vw .1vw #000;
+}
+
+
+/*elements found on home page*/
+.contentText a {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.contentText a:hover {
+    color: #668cff;
+}
+
+.contentRow p {
+    flex-wrap: wrap;
+    text-align: justify;
+    font-size: 1.8vw;
+    font-family: helvetica, sans-serif;
+    line-height: 1.75;
+    color: #1f1f2e;
+    margin-left: 2em; 
+    margin-right: 2.5em;
+}
+
+.contentRowRev p {
+    flex-wrap: wrap;
+    text-align: justify;
+    font-size: 1.8vw;
+    font-family: helvetica, sans-serif;
+    line-height: 1.5;
+    color: #1f1f2e;
+    margin-left: 2.5em; 
+    margin-right: 2em;
+}
+
+.contentRow, .contentRowRev {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 1em 2em;
+}
+.contentRow img {
+    margin: 2em;
+    object-fit: contain;
+    max-width: 51vw; 
+    max-height: 39vw;
+}
+
+.contentRowRev img {
+    margin: 2em;
+    object-fit: contain;
+    max-width: 36vw; 
+    max-height: 24vw;
+}
+
+.donateMessage {
+    font-size: 2vw; 
+    font-family: helvetica, sans-serif; 
+    text-align: center; 
+    margin-left: 3.5em; 
+    margin-right: 3.5em;
+}
+
+@media only screen and (max-width: 600px) {
+    .contentRow{
+        flex-wrap: wrap;
+    }
+    .contentRowRev {
+        flex-wrap: wrap-reverse;
+    }
+    .contentRow p, .contentRowRev p {
+        font-size: 1.25em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .contentRow img, .contentRowRev img {
+        margin-right: 0;
+        object-fit: contain;
+        max-width: 72vw; 
+        max-height: 48vw;
+    }
+    .donateMessage {
+        font-size: 1.2em; 
+        margin-left: 1em; 
+        margin-right: 1em;
+    }
+}
+
+
+/*elements found on FAQs page*/
+.accordion {
+    background-color: #e8eafd;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.6em;
+    cursor: pointer;
+    padding: .8em;
+    text-align: center;
+    width: 100%;
+    border: .1em solid #000;
+    border-radius: .5em;
+    outline: none;
+    transition: .3s;
+}
+
+.leftAccordion {
+    width: 47%;
+    float: left;
+    margin-left: 1em;
+    text-align: center;
+}
+
+.rightAccordion {
+    width: 47%;
+    float: right;
+    margin-right: 1em;
+    text-align: center;
+}
+
+.panel {
+    padding: 0 1em;
+    background-color: #e9f0fc;
+    text-align: justify;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    display: none;
+    overflow: hidden;
+    border-radius: .3em;
+    margin-bottom: 1em;
+}
+
+.active, .accordion:hover {
+    background-color: #b9c0f9;
+}
+
+
+/*elements found on quiz page*/
+.quizButtons {
+    text-align: center;
+}
+
+.quizButtons button {
+    font-size: 2em;
+    background-color: #fadfb7; 
+    border: .07em solid #000;
+    border-radius: 1em;  
+    padding: .5em 1em; 
+}
+
+.quizButtons button:hover {
+    cursor: pointer;
+    background-color: #f6c06f;
+    border: .1em solid #000;
+}
+
+.quizElements {
+    row-gap: 2em;
+}
+
+#Qbutton {
+    position: relative;
+    background-color: #fadfb7;
+    border: .07em solid #000;
+    border-radius: 3em; 
+    font-size: 2.5em;
+    margin-top: 2em;
+    padding: .5em 1em; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Qbutton:hover {
+    cursor: pointer;
+    background-color: #f6c06f;
+}
+
+.fullQ {
+    position: absolute;
+    /*top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+.question {
+    font-size: 2em;
+    font-family: helvetica, sans-serif;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    /*margin-top: 3em;*/
+}
+.choices {
+    font-size: 1.7em;
+    color: #000;
+    line-height: 1.5em;
+    text-align: center;
+    margin-right: 3em;
+    margin-left: 3em;
+    /*margin-top: 1em;*/
+}
+
+input {
+    display: none;
+}
+
+label {
+    background-color: #e8eafd;
+    color: #000;
+    text-align: center;
+    border: .1em solid #000;
+    border-radius: .5em;
+    padding: .5em;
+    transition: .3s;
+    display: block;
+    margin-top: 1em;
+}
+
+label:hover {
+    cursor: pointer;
+    background-color: #b9c0f9;
+    border: .15em solid #000;
+}
+
+input:checked + label {
+    background-color: #b9c0f9;
+    display: block;
+    border: .15em solid #000;
+}
+
+#error {
+    position: relative;
+    color: #ffa64d;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#outputResults {
+    /*position: relative;
+    margin: auto;
+    top: 35%;*/
+}
+
+#quizResults {
+    position: relative;
+    margin: 2em;
+    text-align: center;
+    color: #000; 
+    font-size: 2em;
+    top: 0em;
+}
+
+
+/*elements found on resources page*/
+h2 {
+    text-align: center;
+    font-family: arial, sans-serif;
+    font-size: 2em;
+}
+
+.definitions h3 {
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 1em 1em .2em 1em;
+    /*these 2 !important pieces maintain href link within page, since the 
+    header & logobar block content otherwise*/
+    /*margin-top: -7em !important; 
+    padding-top: 7em !important;*/    
+}
+
+.definitions h4 {
+    font-family: arial, sans-serif;
+    font-style: italic;
+    font-size: 1.4em;
+    color: #93c2c6;
+    text-shadow: .1em .07em 0em #000;
+    margin: .2em 1em 1em 1em;
+}
+
+.definitions p {
+    font-family: arial, sans-serif;
+    text-align: justify;
+    line-height: 1.5em;
+    font-size: 1.3em;
+    margin: 1em;
+}
+
+.definitions a {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.definitions a:hover {
+    color: #668cff;
+}
+
+.inputBarDiv {
+    text-align: center;
+    display: block;
+}
+
+#inputBar {
+    background-image: url("https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png");
+    background-size: 1.4em;
+    background-position: 1em .95em;
+    background-repeat: no-repeat;
+    width: 95%;
+    font-size: 1.1em; 
+    padding: 1em 1em 1em 3em; 
+    border: .1em solid #ddd;
+    z-index: 99999;
+}
+
+#allTerms {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+
