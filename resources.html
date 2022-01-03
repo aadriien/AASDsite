@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- put stylesheet, etc. links here! -->
+    <!-- also any jquery script links! -->
+    
+    <title>NewSite!</title>
+    
+    <style>
+        #navbarSide {
+            display: none;
+        }
+    
+    </style>
+    
+    <script>
+        var menuOpen = false;
+        $(document).ready(() => {
+            $("#hamburger").mouseenter(slideMenu);
+            $("#navbarSide").mouseleave(slideMenu);
+            $("#navbarSide").slideUp();
+            $("#inputBar").show();
+        });
+        
+        function slideMenu() {
+            if (!menuOpen) {
+                $("#hamburger").attr("src", "./images/openmenu.png");
+                $("#navbarSide").slideDown();
+            }
+            else {
+                $("#navbarSide").slideUp();
+                $("#hamburger").attr("src", "./images/menu.png");
+            }
+            menuOpen = !menuOpen;            
+        };  
+        
+        function findItem() {
+            var input, filter, ul, il, a, text;
+            
+            input = document.getElementById("inputBar");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("allTerms");
+            li = ul.getElementsByTagName("li");
+            
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("h3")[0];
+                text = a.textContent || a.innerText;
+                if (text.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                }
+                else {
+                    li[i].style.display = "none";
+                }
+            }            
+        };        
+        
+    </script>
+
+    
+</head>
+
+
+<body>
+    <header>
+        <div class="logoBar">
+            <div class="box">
+                <a href="home.html"><img src="https://www.freeiconspng.com/uploads/home-icon-png-home-icon-31.png"></a>
+            </div>
+            <div class="box">
+                <h1 style="text-shadow: .26vw .1vw .15vw #ebf9f2">
+                    Autistically ASD
+                </h1>
+            </div>
+        </div>
+        <div id="hamburgerNavTop">
+            <div class="box">
+                <img id="hamburger" style="height: 2em" src="./images/menu.png">
+            </div>
+            <div class="box">
+                <a href="home.html"><h3>Home</h3></a>
+            </div>
+            <div class="box">
+                <a href="adulthood.html"><h3>Adulthood</h3></a>
+            </div>
+            <div class="box">
+                <a href="healthcare.html"><h3>Healthcare</h3></a>
+            </div>
+            <div class="box">
+                <a href="comorbidities.html"><h3>Comorbidities</h3></a>
+            </div>
+            <div class="box">
+                <a href="LGBTQ.html"><h3>LGBTQIA+</h3></a>
+            </div>
+            <div class="box">
+                <a href="advocacy.html"><h3>Advocacy</h3></a>
+            </div>
+            <div class="box">
+                <a href="resources.html"><h3>Resources</h3></a>
+            </div>
+            <div class="box">
+                <a href="quiz.html"><h3>Quiz</h3></a>
+            </div>
+            <div class="box">
+                <a href="FAQs.html"><h3>FAQs</h3></a>
+            </div>
+            <div class="box">
+                <a href="about.html"><h3>About</h3></a>
+            </div>
+            <div class="box">
+                <a href="contact.html"><h3>Contact</h3></a>
+            </div>
+            <div class="box">
+                <a href="patreon.html"><h3>Patreon</h3></a>
+            </div>
+        </div>
+        
+        <div id="navbarSide">
+            <a href="home.html">Home</a>
+            <br>
+            <br>
+            <a href="adulthood.html">Adulthood</a>
+            <br>
+            <br>
+            <a href="healthcare.html">Healthcare</a>
+            <br>
+            <br>
+            <a href="comorbidities.html">Comorbidities</a>
+            <br>
+            <br>
+            <a href="LGBTQ.html">LGBTQIA+</a>
+            <br>
+            <br>
+            <a href="advocacy.html">Advocacy</a>
+            <br>
+            <br>
+            <a href="resources.html">Resources</a>
+            <br>
+            <br>
+            <a href="quiz.html">Quiz</a>
+            <br>
+            <br>
+            <a href="FAQs.html">FAQs</a>
+            <br>
+            <br>
+            <a href="about.html">About</a>
+            <br>
+            <br>
+            <a href="contact.html">Contact</a>
+            <br>
+            <br>
+            <a href="patreon.html">Patreon</a>
+            <br>
+            <button id="closeMenu"></button>          
+        </div>        
+        
+    </header>
+    
+    <br><br><br><br><br><br><br><br><br>
+    
+    <button id="translateButton">
+        <img id="arrow" style="height: 1.2em; float: right; margin-right: 1.5em; margin-left: -1.7em" src="https://image.flaticon.com/icons/png/512/60/60995.png">
+        Translate
+    </button>   
+    
+    <h1 style="font-size: 2.2em; text-align: center; font-family: arial, sans-serif">
+        AutisticallyASD: A Guide to Authentic and Intersectional Neurodivergence
+    </h1>
+    <br>
+
+    
+    <div class="definitions">
+    <h2>Definitions & Terminology</h2>
+        
+        <div class="inputBarDiv">
+            <input type="text" id="inputBar" onkeyup="findItem()" placeholder="Search for a term..."><br><br>
+        </div>
+        
+        <ul id="allTerms">
+            
+        <li><br><h3 id="allistic">allistic:</h3>
+            <h4>adjective, noun</h4>
+            <p>
+                A person who is not <a href="#autism">autistic</a>. It is possible that the individual 
+                in question could be <a href="#neurotypical">neurotypical</a>, though it could also be the 
+                case that they are <a href="#neurodivergent">neurodivergent</a>. Phrased another way, an allistic
+                person is someone who possesses any neurotype that does not 
+                involve <a href="#autism">autism</a>.
+            </p><br><hr></li>
+    
+        <li><br><h3 id="autism">Autism Spectrum Disorder (ASD) / autism / autistic:</h3>
+            <h4>noun / noun / adjective</h4>
+            <p>
+                A neurological condition, commonly considered to be a 
+                developmental disorder, that affects the ways in which an 
+                individual perceives and responds to their environment. Autism,
+                or Autism Spectrum Disorder (abbreviated ASD), falls
+                under the <a href="#neurodivergent">neurodivergent</a> umbrella, owing to the fact that it is
+                simply a difference in the way that the nervous system processes
+                information. ASD occurs naturally, and it serves as a 
+                wonderful example of human biodiversity. ASD has been in 
+                existence long before it was labeled by researchers, and its 
+                unique traits have paved the way for major contributions to the 
+                development and progression of humanity. ASD can present in 
+                infinitely many diverse ways, and owing to the fact that 
+                society has been structured around the <a href="#neurotypical">neurotypical</a> experience,
+                many autistic self-advocates consider autism to be a disability.
+            </p><br><hr></li>
+            
+        <li><br><h3 id="AAC">Augmentative and Alternative Communication (AAC):</h3>
+            <h4>noun</h4>
+            <p>
+                A means by which an individual can communicate without having 
+                to rely explicitly on verbal speech. More commonly referred to 
+                by its abbreviation of AAC, Augmentative and Alternative 
+                Communication can involve the use of an electronic device, a 
+                paper/chart, a whiteboard, etc. AAC is typically used by a
+                nonspeaking <a href="#neurodivergent">neurodivergent</a> population, but there are a number of
+                verbal and partially verbal people who benefit from AAC. Such 
+                communication tools can be of particular help during times of 
+                <a href="#meltdown">meltdown</a> and <a href="#shutdown">shutdown</a>, as they enable the individual to convey 
+                thoughts, needs, and experiences at a time when the brain may 
+                not allow for fluid speech. AAC is just as valuable and authentic 
+                as any other form of communication, and nobody should ever lose 
+                access to, or be weaned off of, any communication tools that 
+                provide comfort and support self-articulation.
+            </p><br><hr></li>
+            
+        <li><br><h3 id="burnout">burnout:</h3>
+            <h4>noun</h4>
+            <p>
+                A powerful state of exhaustion experienced by an <a href="#autism">autistic</a> 
+                person, which, if left untreated, can last weeks, months, or even 
+                years. A period of burnout can often look and feel similar to a 
+                <a href="#shutdown">shutdown</a>, yet burnout involves a much lengthier, and 
+                typically more vicious, cycle of repeated distress. Common 
+                contributors to burnout can vary, but namely consist of instances 
+                where the individual pushes themselves excessively, whether it 
+                be at work/school, in social situations, in moments of sensory 
+                processing, etc. Burnout is exacerbated by a determination to 
+                keep going and to ignore one's needs (for example, neglecting to 
+                wear headphones or sunglasses in overwhelming settings for fear 
+                of being judged). Burnout is only ever alleviated when the 
+                individual implements a thorough period of rest, where they can 
+                address their needs and be free of any pressure to perform.            
+            </p><br><hr></li>   
+            
+        <li><br><h3 id="inspiration">inspiration porn:</h3>
+            <h4>noun</h4>
+            <p>
+                A process by which the lives and actions of disabled people are 
+                glorified for the sake of uplifting the spirits of non-disabled 
+                people. It occurs when disabled people are condescendingly praised 
+                for engaging in various (oftentimes perfectly ordinary) activities. 
+                They may be labeled as "inspirational", "heroic", or any other 
+                number of descriptors, simply because their disability singles them 
+                out as being different from others around them. Common examples 
+                include but are not limited to: taking a disabled person to prom 
+                and very publicly sharing the news to others, posting videos 
+                online of a Deaf or Hard of Hearing person using hearing aids 
+                for the first time, viewing photos of people with mobility 
+                impairments engaging in athletics for the sake of giving oneself 
+                a motivational boost, etc. In short, if the idea of a disabled 
+                person participating in an activity gives you a "feel-good" 
+                pick-me-up, then you are likely perpetuating inspiration porn. 
+                Yet inspiration porn is incredibly ableist, as it dehumanizes the 
+                individual by suggesting that the mere existence of their disability 
+                renders them an object of inspiration. It allows non-disabled 
+                people to feel better about themselves becauses it reinforces 
+                their illusion of disability being some bad or inferior obstacle 
+                to overcome. 
+            </p><br><hr></li>  
+        
+        <li><br><h3 id="meltdown">meltdown:</h3>
+            <h4>noun</h4>
+            <p>
+                An often explosive loss of control that is experienced by 
+                someone who has surpassed their threshold of tolerance. Some 
+                visible displays of an <a href="#autism">autistic</a> meltdown include, but are not 
+                limited to, crying, screaming, injuring oneself/others, covering 
+                one's ears/eyes, and stimming, though each meltdown is 
+                specific to the individual. Meltdowns are extremely agonizing 
+                for the individual to experience, and are often accompanied by 
+                later feelings of shame, regret, tiredness, etc. They can be 
+                triggered by sensory overwhelm, emotional and social overwhelm, 
+                miscommunication, change in routine, and more. Meltdowns are 
+                completely involuntary, and always unwanted. Nobody should 
+                ever be punished for their meltdowns.
+            </p><br><hr></li>
+        
+        <li><br><h3 id="neurodivergent">neurodivergence / neurodivergent:</h3>
+            <h4>noun / adjective</h4>
+            <p>
+                A variation in the way that an individual's nervous system 
+                (most notably their brain) functions. Someone who is neurodivergent
+                has a neurology that operates differently from that which is 
+                found in the majority of the population. Different people have 
+                different perceptions of what this term entails, but generally,
+                neurodivergence is considered to include conditions such as, but 
+                not necessarily limited to, <a href="#autism">Autism Spectrum Disorder (ASD)</a>, 
+                Attention Deficit Hyperactivity Disorder (ADHD), Tourette
+                Syndrome (TS), Obsessive-Compulsive Disorder (OCD), dyslexia, 
+                dyscalculia, dyspraxia, and epilepsy. There exists debate as to 
+                whether certain mental health diagnoses should be classified
+                under the umbrella of neurodivergence.
+            </p><br><hr></li>
+        
+        <li><br><h3 id="neurodiversity">neurodiversity / neurodiverse:</h3>
+            <h4>noun / adjective</h4>
+            <p>
+                The collection of diverse neurological experiences. Neurodiversity 
+                exists in a group where some people are <a href="#neurotypical">neurotypical</a> and others 
+                are <a href="#neurodivergent">neurodivergent</a>. It represents the many varied ways in which 
+                different individuals in a community can perceive and interact 
+                with the world. Neurodiversity is important for biodiversity,
+                and it keeps society healthy and flourishing. There is no one 
+                neurotype that is superior to others.
+            </p><br><hr></li>
+        
+        <li><br><h3 id="neurotypical">neurotypical:</h3>
+            <h4>adjective, noun</h4>
+            <p>
+                A person whose neurology is most commonly found in the majority 
+                of individuals in the human population. This means that a 
+                neurotypical person's nervous system perceives and responds to 
+                the environment in a way that is similar to what is found in most other 
+                individuals. Because neurotypicals are expected to constitute the 
+                majority, our society is nearly always tailored to the neurotypical
+                experience, which can leave little room for <a href="#neurodivergent">neurodivergent</a>
+                communities to find comfort and achieve success.
+            </p><br><hr></li>
+            
+        <li><br><h3 id="shutdown">shutdown:</h3>
+            <h4>noun</h4>
+            <p>
+                A kind of internalized <a href="#meltdown">meltdown</a>. The triggers of a shutdown are 
+                often the same as those of a <a href="#meltdown">meltdown</a>, though shutdowns are 
+                usually harder for an outsider to notice. Some visible displays
+                of an <a href="#autism">autistic</a> shutdown include, but are not limited to, crying,
+                spacing out, becoming very still, becoming unresponsive or 
+                otherwise delayed, and losing the ability to speak, though, 
+                like <a href="#meltdown">meltdowns</a>, shutdowns are specific to the individual. Many 
+                compare shutdowns to an autopilot that takes over when the 
+                body and brain cannot push themselves any further. These 
+                internalized experiences are more common in adults, and they are 
+                just as emotionally and physically taxing to endure as a 
+                <a href="#meltdown">meltdown</a>.            
+            </p><br><hr></li>
+        
+        <li><br><h3 id="interest">special interest:</h3>
+            <h4>noun</h4>
+            <p>
+                A book, TV show, movie, topic, concept, organism, etc. that brings
+                an <a href="#autism">autistic</a> individual joy, comfort, and amusement. Many <a href="#autism">autistic</a> 
+                people feel very passionate about their special interests, and 
+                they can thus spend lengthy periods of time learning about, and 
+                subsequently communicating about, whichever topics attract their 
+                attention. Some people retain their special interests for years,
+                while others may find new passions over the course of days. An 
+                individual can have multiple, few, or even no special interests.
+            </p><br><hr></li>
+                    
+        <li><br><h3 id="stim">stim / stimming:</h3>
+            <h4>noun / verb</h4>
+            <p>
+                A self-stimulatory behavior that is often performed repetitively.
+                Stimming is done in a number of ways. It can involve interacting 
+                with one's body, and it can also involve interacting with fidget toys.
+                Certain stims, such as rocking back and forth, flapping one's 
+                hands, making sound, spinning in circles, etc. are more visible.
+                Other stims, such as bouncing one's leg, rubbing a soft object,
+                twirling one's hair, clearing one's throat, viewing a colorful
+                object, etc. are less visible, and therefore are less frequently
+                noticed. Many <a href="#neurotypical">neurotypicals</a> engage in some small degree of 
+                stimming, whereas <a href="#neurodivergent">neurodivergent</a> individuals tend to stim more 
+                frequently and more visibly. Stimming is natural and beautiful.
+            </p><br><hr></li>            
+        </ul>    
+        
+    </div>    
+    
+    <br><br><br><br><br>
+    
+    <h2>Websites</h2>
+    
+    <h2>Books</h2>
+    
+    <h2>Movies</h2>
+    
+    <h2>TV Shows</h2>
+    
+    
+    
+    
+    
+    <br><br><br><br><br>
+</body>
+
+
+
+
+<footer>
+</footer>
+
+
+
+
+
+
