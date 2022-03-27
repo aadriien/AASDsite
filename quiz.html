@@ -29,10 +29,10 @@
         function slideMenu() {
             if (!menuOpen) {
                 $("#hamburger").attr("src", "./images/openmenu.png");
-                $("#navbarSide").slideDown();
+                $("#navbarSide").slideDown("slow");
             }
             else {
-                $("#navbarSide").slideUp();
+                $("#navbarSide").slideUp("slow");
                 $("#hamburger").attr("src", "./images/menu.png");
             }
             menuOpen = !menuOpen;            
@@ -50,8 +50,8 @@
                 <a href="home.html"><img src="https://www.freeiconspng.com/uploads/home-icon-png-home-icon-31.png"></a>
             </div>
             <div class="box">
-                <h1 style="text-shadow: .26vw .1vw .15vw #ebf9f2">
-                    Autistically ASD
+                <h1 style="text-shadow: .28vw .1vw .15vw #ffd1cc">
+                    Autistically
                 </h1>
             </div>
         </div>
@@ -62,9 +62,9 @@
             <div class="box">
                 <a href="home.html"><h3>Home</h3></a>
             </div>
-            <div class="box">
+            <!--<div class="box">
                 <a href="adulthood.html"><h3>Adulthood</h3></a>
-            </div>
+            </div>-->
             <div class="box">
                 <a href="healthcare.html"><h3>Healthcare</h3></a>
             </div>
@@ -74,11 +74,14 @@
             <div class="box">
                 <a href="LGBTQ.html"><h3>LGBTQIA+</h3></a>
             </div>
-            <div class="box">
+            <!--<div class="box">
                 <a href="advocacy.html"><h3>Advocacy</h3></a>
-            </div>
+            </div>-->
             <div class="box">
                 <a href="resources.html"><h3>Resources</h3></a>
+            </div>
+            <div class="box">
+                <a href="terminology.html"><h3>Terminology</h3></a>
             </div>
             <div class="box">
                 <a href="quiz.html"><h3>Quiz</h3></a>
@@ -100,9 +103,9 @@
         <div id="navbarSide">
             <a href="home.html">Home</a>
             <br>
-            <br>
+            <!--<br>
             <a href="adulthood.html">Adulthood</a>
-            <br>
+            <br>-->
             <br>
             <a href="healthcare.html">Healthcare</a>
             <br>
@@ -112,11 +115,14 @@
             <br>
             <a href="LGBTQ.html">LGBTQIA+</a>
             <br>
-            <br>
+            <!--<br>
             <a href="advocacy.html">Advocacy</a>
-            <br>
+            <br>-->
             <br>
             <a href="resources.html">Resources</a>
+            <br>
+            <br>
+            <a href="terminology.html">Terminology</a>
             <br>
             <br>
             <a href="quiz.html">Quiz</a>
@@ -145,19 +151,10 @@
         Translate
     </button>   
     
-    <h1 id="heading" style="font-size: 2.2em; text-align: center; font-family: arial, sans-serif">
+    <!--<h1 id="heading" style="font-size: 2.2em; text-align: center; font-family: arial, sans-serif">
         AutisticallyASD: Quiz
-    </h1>
-    <br>
-    
-    <p id="reminder">Note to self: to provide multiple quizzes, have different buttons 
-        on the page to present each available quiz, so that when the user 
-        clicks one of the buttons then the page displays that specific quiz 
-        (following the beginning of a quiz, all of the quiz option buttons 
-        will disappear so that the current quiz content can occupy the page)...
-        with multiple quizzes, utilizing a database would be the most practical
-        solution, albeit more difficult to set up</p>
-    
+    </h1>-->
+
     
     
     <div id="outputResults">
@@ -362,7 +359,7 @@
                 options: 
                     {
                         a: "It's a typical medical office: strong lights, a consistent soap smell, passing noise, fairly busy.",
-                        b: "I try to seek out spaces that are less stimulating when I know my patient is autistic, but such environments can be difficult to access.",
+                        b: "I try to seek out spaces that are less stimulating when I know my patient is Autistic, but such environments can be difficult to access.",
                         c: "The only rooms with bright lights are those that really need clarity of vision. I purposefully make an effort to choose a space that is far from noise, and I offer sunglasses, earplugs, fidget toys, etc. to any patient I come across, regardless of whether I know them to have a disability.",
                     },
                 outcome:
@@ -373,12 +370,12 @@
                     }
             },
             {
-                question: "How do you interact with autistic patients, particularly those who are beyond an elementary school age range?",
+                question: "How do you interact with Autistic patients, particularly those who are beyond an elementary school age range?",
                 options: 
                     {
                         a: "Regardless of their age, I speak mainly to their parent(s)/guardian(s). If the patient is nonspeaking, I cannot directly communicate with them at all.",
-                        b: "I make an effort to speak with the autistic individual, but I often require the input of the parent(s)/guardian(s) to get the full picture. I might attempt to communicate with a patient who uses AAC, but it can be difficult.",
-                        c: "I prioritize the individual and trust in their ability to advocate for, and comprehend, themselves. I welcome all forms of communication, and I treat my autistic patients with professional respect and integrity. I am always open to parent/guardian input, but only if the patient gives permission for their parent(s)/guardian(s) to be involved.",
+                        b: "I make an effort to speak with the Autistic individual, but I often require the input of the parent(s)/guardian(s) to get the full picture. I might attempt to communicate with a patient who uses AAC, but it can be difficult.",
+                        c: "I prioritize the individual and trust in their ability to advocate for, and comprehend, themselves. I welcome all forms of communication, and I treat my Autistic patients with professional respect and integrity. I am always open to parent/guardian input, but only if the patient gives permission for their parent(s)/guardian(s) to be involved.",
                     },
                 outcome:
                     {
@@ -422,8 +419,8 @@
                 options: 
                     {
                         a: "I have never had neurodiversity training, or otherwise the training I had was lacking in substance.",
-                        b: "I receive routine or occasional neurodiversity training, but the concepts/language often appear outdated. I have many questions, and I don't always feel prepared to work with neurodiverse patients in person.",
-                        c: "The training I receive is thorough and routine. The materials are created by and, if applicable, presented by, neurodiverse self-advocates. Inclusive and intersectional language is very consistent.",
+                        b: "I receive routine or occasional neurodiversity training, but the concepts/language often appear outdated. I have many questions, and I don't always feel prepared to work with neurodivergent patients in person.",
+                        c: "The training I receive is thorough and routine. The materials are created by and, if applicable, presented by, neurodivergent self-advocates. Inclusive and intersectional language is very consistent.",
                     },
                 outcome:
                     {
@@ -436,7 +433,7 @@
                 question: "To what extent are you familiar with and mindful of intersectionality?",
                 options: 
                     {
-                        a: "I have been trained and am informed in several areas, but I'm unsure of which conditions or identities might be more common in an autistic population.",
+                        a: "I have been trained and am informed in several areas, but I'm unsure of which conditions or identities might be more common in an Autistic population.",
                         b: "I am aware of the influence of certain socioeconomic positions, and I work to be mindful of the significance of race, ethnicity, language, gender, etc. in affecting the individual experience. But I could benefit from paying greater attention to these intersections, or I'd otherwise like to learn about additional identities.",
                         c: "In addition to being mindful of racial, ethnic, and sociological factors, I also comprehend the increased likelihood of LGBTQIA+ identities, physical conditions / chronic illness, and comorbid neurological / mental health experiences, among others. My practice has been intentionally built upon an intersectional foundation.",
                     },
@@ -471,7 +468,7 @@
                 options: 
                     {
                         a: "I put forth my best effort to meet my client wherever they may be, but it can be difficult to work with clients who are not always receptive to emotions, or who otherwise struggle to convey their thoughts.",
-                        b: "I recognize that emotions can pose a challenge for autistic people, so I am careful to respect their comfort. I encourage my clients to communicate on their own terms, whether that be through speech, drawing, an AAC device, etc. But I'm not sure I would feel prepared to address the needs of a diverse autistic population.",
+                        b: "I recognize that emotions can pose a challenge for Autistic people, so I am careful to respect their comfort. I encourage my clients to communicate on their own terms, whether that be through speech, drawing, an AAC device, etc. But I'm not sure I would feel prepared to address the needs of a diverse Autistic population.",
                         c: "In addition to accepting and encouraging the unique emotional expression and communication of my clients, I also can appreciate the non-traditional speed of, and approach to, the therapeutic process. My practice prioritizes warmth, positive regard, flexibility, and creativity.",
                     },
                 outcome:
@@ -487,7 +484,7 @@
                     {
                         a: "I have training in a number of areas, so I feel confident in my ability to understand many perspectives. But I'm not very familiar/comfortable with certain comorbid conditions.",
                         b: "My training and past experience have equipped me with a broad understanding of various identities, and I am willing to research any comorbid conditions a client mentions. But I imagine I might have a hard time connecting with a client whose needs are more extensive.",
-                        c: "I have worked with many neurodiverse individuals in the past, and I am well-versed in the various comorbidites that I am likely to encounter in working with autistic clients. I am eager to research any conditions or identities that could help me better understand my client.",
+                        c: "I have worked with many neurodiverse individuals in the past, and I am well-versed in the various comorbidites that I am likely to encounter in working with Autistic clients. I am eager to research any conditions or identities that could help me better understand my client.",
                     },
                 outcome:
                     {
@@ -500,7 +497,7 @@
                 question: "To what extent do you believe in your clients' knowledge of themselves?",
                 options: 
                     {
-                        a: "Of course I am very respectful of my clients and their self-perception. But I sometimes question my autistic clients' ability to really grasp what it is they feel or need, especially if they are younger or have more limited speech.",
+                        a: "Of course I am very respectful of my clients and their self-perception. But I sometimes question my Autistic clients' ability to really grasp what it is they feel or need, especially if they are younger or have more limited speech.",
                         b: "I trust my clients' ability to advocate for themselves, and I am almost always receptive to their decisions. I only challenge their judgment when I believe them to be thinking inaccurately, or otherwise when, if applicable, their parent(s)/guardian(s) possess opinions that grossly contradict theirs.",
                         c: "I recognize my clients' capacity for autonomy and self-determination, and I am completely confident in their ability to comprehend what it is they feel, need, perceive, etc. I might ask for further information if something seems very unusual, but my practice ultimately focuses on cultivating the empowerment of each client.",
                     },
@@ -530,9 +527,9 @@
                 question: "Where do your opinions lie on ABA and similar behavior modification therapies?",
                 options: 
                     {
-                        a: "ABA is said to be evidence-based, and I trust the professionals. That is to say, I trust that physicians and researchers understand what is best for an autistic population.",
+                        a: "ABA is said to be evidence-based, and I trust the professionals. That is to say, I trust that physicians and researchers understand what is best for an Autistic population.",
                         b: "I am aware of the terrible origins of, and motivations behind, ABA, but I'm not sure there is much else to do in the more extreme cases.",
-                        c: "In addition to comprehending the extensively corrupt history of ABA, I also recognize that the autistic community has thoroughly denounced ABA for its abusive practices and its legacy of trauma. I trust self-advocates, thus I am wholeheartedly opposed to any and all kinds of therapy that employ behavior modification.",
+                        c: "In addition to comprehending the extensively corrupt history of ABA, I also recognize that the Autistic community has thoroughly denounced ABA for its abusive practices and its legacy of trauma. I trust self-advocates, thus I am wholeheartedly opposed to any and all kinds of therapy that employ behavior modification.",
                     },
                 outcome:
                     {

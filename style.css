@@ -1,6 +1,6 @@
 /*elements found on each page*/
 #navbarSide {
-    width: 10em;
+    width: 11em;
     height: 105vw;
     background-color: #ffd1cc;
     opacity: .97;
@@ -11,6 +11,9 @@
     border: .15em solid #000;
     border-top: 0em;
     border-left: 0em;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
 }
 
 #navbarSide a {
@@ -41,7 +44,7 @@
     position: relative;    
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: space-between;
     overflow: hidden;
     border: .1em solid #000;
     border-left: 0em;
@@ -106,12 +109,16 @@ a:hover {
     color: #ebf9f2;
 }
 
-.box a:hover {
+#hamburgerNavTop a:hover {
     color: #ebf9f2;
+    text-shadow: .208vw .05vw .05vw #000;
+    font-size: 1.05em;
 }
 
 #navbarSide a:hover {
     color: #ebf9f2;
+    text-shadow: .15vw .05vw .05vw #000;
+    font-size: 1.8em;
 }
 
 #translateButton {
@@ -325,6 +332,8 @@ a:hover {
     font-weight: bold;
     color: #000;
     text-align: center;
+    margin-left: 4em;
+    margin-right: 4em;
     /*margin-top: 3em;*/
 }
 .choices {
@@ -390,6 +399,60 @@ input:checked + label {
 
 
 /*elements found on resources page*/
+
+.resourceItems h3 {
+    text-align: center;
+    font-size: 2em;
+    font-family: arial, sans-serif;
+    color: #93c2c6 !important;
+    text-shadow: .055em .04em 0em #000;
+}
+
+.resourceItems a h3:hover {
+    cursor: pointer;
+    font-size: 2.2em;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.resourceItems p {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
+    font-family: arial, sans-serif;
+    color: #000;
+}
+
+.resourceItems p a {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.resourceItems p a:hover {
+    cursor: pointer;
+    color: #93c2c6 !important;
+}
+
+.resourceItems img {
+    border: 5px solid #ffd1cc;
+    border-radius: 1em;
+    box-shadow: 3px 2px #ffa399;
+}
+
+.imageR {
+    margin-right: 0em;
+    margin-left: 3em;
+}
+
+.imageL {
+    margin-left: 0em;
+    margin-right: 3em;
+}
+
+
+/*elements found on terminology page*/
 h2 {
     text-align: center;
     font-family: arial, sans-serif;
@@ -412,7 +475,7 @@ h2 {
     font-style: italic;
     font-size: 1.4em;
     color: #93c2c6;
-    text-shadow: .1em .07em 0em #000;
+    text-shadow: .08em .05em 0em #000;
     margin: .2em 1em 1em 1em;
 }
 
@@ -455,6 +518,9 @@ h2 {
     padding: 0;
     margin: 0;
 }
+
+
+
 
 
 
